@@ -1,0 +1,44 @@
+@if (currentWeather() && currentWeather().icon) {
+    <p-card>
+    <div class="vertical-content">
+        <img
+        [src]="
+            'https://openweathermap.org/img/wn/' + currentWeather().icon + '@2x.png'
+        "
+        [alt]="'Current weather: ' + currentWeather().main"
+        />
+        <span class="main-info">{{ currentWeather().temp }} °</span>
+        <span class="main-info">{{ currentWeather().city }}</span>
+    </div>
+
+    <div class="details-wrapper">
+        <div class="details">
+        <span>{{ currentWeather().feels }}</span>
+        <span>feels like</span>
+        </div>
+        <div class="details">
+        <span>{{ currentWeather().humidity }}</span>
+        <span>humidity</span>
+        </div>
+        <div class="details">
+        <span>{{ currentWeather().windSpeed }}</span>
+        <span>wind speed</span>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between">
+        @for(el of currentWeather().forecast; track $index) {
+        <div>
+        <div>
+            <img
+            [src]="'https://openweathermap.org/img/wn/' + el.icon + '@2x.png'"
+            [alt]="'Current weather: ' + el.weather"
+            />
+        </div>
+        <p>{{ el.day }}</p>
+        <p>{{ el.min }} °/ {{ el.max }} °</p>
+        </div>
+        }
+    </div>
+    </p-card>
+}

@@ -1,0 +1,38 @@
+:host {
+  display: block;
+  width: 650px;
+}
+
+p {
+  text-align: center;
+  margin: 0;
+}
+
+:host ::ng-deep .p-card .p-card-body {
+  color: #4f4949;
+  background: url('../../../assets/images/sky.jpg') center / cover no-repeat !important;   
+}
+
+.main-info {
+  font-size: 33px;
+  font-weight: 600;
+}
+
+.vertical-content {
+  display: flex;
+  align-items: center;
+}
+
+.details-wrapper {
+  display: flex;
+
+  .details {
+    max-width: 100px;
+    text-align: center;
+    margin: 0 30px;
+
+    span {
+      display: block;
+    }
+  }
+}
