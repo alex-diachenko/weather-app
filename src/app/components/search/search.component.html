@@ -1,0 +1,9 @@
+<div class="wrapper">
+    <input type="text" pInputText [(ngModel)]="searchData"/>
+    <p-button label="Search" [disabled]="!searchData.length" (click)="searchWeather()"/>
+</div>
+@if(isNotFound) {
+    <p>
+        {{ notFoundMessage }}
+    </p>
+}
